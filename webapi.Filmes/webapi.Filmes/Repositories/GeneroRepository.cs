@@ -33,7 +33,22 @@ namespace webapi.Filmes.Repositories
 
         public void Cadastrar(GeneroDomain novoGenero)
         {
-            throw new NotImplementedException();
+            //Declara a conexao passando a string de conexao como parametro
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                //Declara a query que sera executada
+                string queryInsert = "INSERT INTO Genero(Nome) VALUES ('"+ novoGenero.Nome +"')";
+
+                //Declara o SqlCommand passando a query que sera executada e a conexao com o bd
+                using (SqlCommand cmd = new SqlCommand(queryInsert, con))
+                {
+                    //Abre a conexao com o banco de dados
+                    con.Open();
+
+                    //Executar a query (queryInsert)
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
 
         public void Deletar(int id)
