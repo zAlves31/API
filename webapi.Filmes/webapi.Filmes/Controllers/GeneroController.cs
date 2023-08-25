@@ -34,6 +34,10 @@ namespace webapi.Filmes.Controllers
             _generoRepository = new GeneroRepository();
         }
 
+        /// <summary>
+        /// EndPoint que aciona o metodo ListarTodos do genero 
+        /// </summary>
+        /// <returns>resposta para o usuario(front-end)</returns>>
         [HttpGet]
 
         public IActionResult Get()
@@ -46,35 +50,53 @@ namespace webapi.Filmes.Controllers
                 //retorna a lista no formato JSON com o status code OK(200)
                 return Ok(listaGeneros);
             }
-            catch(Exception erro)
+            catch (Exception erro)
             {
                 //retorna um status code BadRequest(400) e a mensagem do erro
                 return BadRequest(erro.Message);
             }
         }
         /// <summary>
-        /// Endopoint que aciona o metodo de cadastro de genero
+        /// EndPoint que aciona o metodo de cadastro de genero
         /// </summary>
         /// <param name="novoGenero">Objeto recebido na requisicao</param>
         /// <returns>status code 201(created)</returns>
         [HttpPost]
         public IActionResult Post(GeneroDomain novoGenero)
         {
-            try 
-            { 
+            try
+            {
                 //Fazendo a chamada para o metodo cadastrar passando o objeto como parametro
                 _generoRepository.Cadastrar(novoGenero);
 
                 return StatusCode(201);
             }
-            catch(Exception erro) 
+            catch (Exception erro)
             {
                 return BadRequest(erro.Message);
             }
-           
+
         }
 
-       
-            
+        /// <summary>
+        /// EndPoint que aciona o metodo de deletar genero
+        /// </summary>
+        /// <param name="id">id do genero a ser deletado</param>
+        /// <returns>status code</returns>
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                //Fazendo a chamada para o metodo deletar passando o objeto como parametro
+                _generoRepository.Deletar(id);
+
+                return StatusCode(204);
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro.Message);
+            }
+        }
     }
 }

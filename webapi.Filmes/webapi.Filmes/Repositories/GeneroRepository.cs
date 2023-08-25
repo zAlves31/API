@@ -31,6 +31,10 @@ namespace webapi.Filmes.Repositories
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Cadastrar um novo Genero
+        /// </summary>
+        /// <param name="novoGenero">Objeto com as informacoes que serao cadastradas</param>
         public void Cadastrar(GeneroDomain novoGenero)
         {
             //Declara a conexao passando a string de conexao como parametro
@@ -42,6 +46,10 @@ namespace webapi.Filmes.Repositories
                 //Declara o SqlCommand passando a query que sera executada e a conexao com o bd
                 using (SqlCommand cmd = new SqlCommand(queryInsert, con))
                 {
+
+                    //passa o valor do parametro filme
+                    cmd.Parameters.AddWithValue("@Nome", novoGenero.Nome);
+
                     //Abre a conexao com o banco de dados
                     con.Open();
 
@@ -51,11 +59,41 @@ namespace webapi.Filmes.Repositories
             }
         }
 
+
+        /// <summary>
+        /// Deleletar um determinado genero
+        /// </summary>
+        /// <param name="id">Id do objeto a ser deletado</param>
         public void Deletar(int id)
         {
-            throw new NotImplementedException();
+                //Declara a conexao passando a string de conexao como parametro
+                using (SqlConnection con = new SqlConnection(StringConexao))
+                {
+                    //Declara a query que sera executada
+                    string queryDelete = "DELETE FROM Genero WHERE IdGenero = @IdGenero";
+
+                    
+                    //Declara o SqlCommand passando a query que sera executada e a conexao com o bd
+                    using (SqlCommand cmd = new SqlCommand(queryDelete,con))
+                    {
+                        //passa o valor para o parametro IdGenero
+                        cmd.Parameters.AddWithValue("@IdGenero", id);   
+                        
+                        //Abre a conexao com o banco de dados
+                        con.Open();
+
+                        //Executar a query (queryDelete)
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            
         }
 
+
+        /// <summary>
+        /// Listar todos os objetos Generos
+        /// </summary>
+        /// <returns> Lista de objetos(Generos) </returns>
         public List<GeneroDomain> ListarTodos()
         {
             //Cria uma lista de objetos do tipo genero
