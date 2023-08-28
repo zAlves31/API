@@ -79,7 +79,7 @@ namespace webapi.Filmes.Controllers
         }
 
         /// <summary>
-        /// EndPoint que aciona o metodo de deletar genero
+        /// EndPoint que aciona o metodo de deletar genero por ID
         /// </summary>
         /// <param name="id">id do genero a ser deletado</param>
         /// <returns>status code</returns>
@@ -98,5 +98,26 @@ namespace webapi.Filmes.Controllers
                 return BadRequest(erro.Message);
             }
         }
+
+        /// <summary>
+        /// ndPoint que aciona o metodo de buscar IdGenero
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet("{id}")]
+        public IActionResult BuscarPorId(int id)
+        {
+            try
+            {
+                GeneroDomain generoEncontrado = _generoRepository.BuscarPorId(id);
+                
+                return Ok(generoEncontrado);
+            }
+            catch(Exception erro) 
+            {
+                return BadRequest(erro.Message);
+            }
+        }
     }
+
 }

@@ -46,7 +46,6 @@ namespace webapi.Filmes.Interfaces
         /// <param name="id">Id do objeto a ser buscado</param>
         /// <returns>Objeto bsucado</returns>
         GeneroDomain BuscarPorId(int id);
-        void Delete(GeneroDomain novoGenero);
-        void Delete(int id);
+      
     }
 }

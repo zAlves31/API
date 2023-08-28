@@ -26,9 +26,54 @@ namespace webapi.Filmes.Repositories
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Buscar um Genero atraves do seu id
+        /// </summary>
+        /// <param name="id">Id do Genero a ser buscado</param>
+        /// <returns>Objeto buscado ou null caso nao seja encontrado</returns>
         public GeneroDomain BuscarPorId(int id)
         {
-            throw new NotImplementedException();
+            //Declara a conexao passando a string de conexao como parametro
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                //Declara a query que sera executada
+                string querySelectById = $"SELECT IdGenero, Nome FROM Genero WHERE IdGenero = @IdGenero";
+
+                //Abre a conexao com o banco de dados
+                con.Open();
+
+                //Declara o Sqldatareader para percorrer a tabela do banco de dados
+                SqlDataReader rdr;
+
+                //Declara o SqlCommand passando a query que sera executada e a conexao com o bd
+                using (SqlCommand cmd = new SqlCommand(querySelectById, con)) 
+                {
+                    //passa o valor para o parametro @IdGnero
+                    cmd.Parameters.AddWithValue("@IdGenero", id);
+
+                    //Executa a query e armazena os dados no rdr
+                    rdr = cmd.ExecuteReader();
+                    
+                    //Verifica se o resultado da query retornou algum registro
+                    if (rdr.Read()) 
+                    {
+                        //Se sim, instancia um novo objeto generoBuscado do tipo GeneroDomain
+                        GeneroDomain generoBuscado = new GeneroDomain
+                        {
+                            //Atribui a propriedade IdGenero o valor da coluna "IdGenero" da tavela do banco de dados
+                            IdGenero = Convert.ToInt32(rdr["IdGenero"]),
+
+                            //Atribui a propriedade Nome o valor da coluna "Nome" da tabela do banco de dados
+                            Nome = rdr["Nome"].ToString()
+                        };
+                        //Retorna o generoBuscado com os dados obtidos
+                        return generoBuscado;
+
+                    }
+                    //Se nao, retorna null
+                    return null;
+                }
+            }
         }
 
         /// <summary>
