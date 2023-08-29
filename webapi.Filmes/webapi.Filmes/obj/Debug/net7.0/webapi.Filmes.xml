@@ -36,9 +36,24 @@
         </member>
         <member name="M:webapi.Filmes.Controllers.GeneroController.BuscarPorId(System.Int32)">
             <summary>
-            ndPoint que aciona o metodo de buscar IdGenero
+            EndPoint que aciona o metodo de buscar IdGenero
             </summary>
             <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.Filmes.Controllers.GeneroController.AtualizarIdUrl(System.Int32,webapi.Filmes.Domains.GeneroDomain)">
+            <summary>
+            EndPoint que aciona o metodo Atualizar Id URL
+            </summary>
+            <param name="id"></param>
+            <param name="Genero"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.Filmes.Controllers.GeneroController.PutIdBody(webapi.Filmes.Domains.GeneroDomain)">
+            <summary>
+            
+            </summary>
+            <param name="genero"></param>
             <returns></returns>
         </member>
         <member name="T:webapi.Filmes.Domains.GeneroDomain">
@@ -99,6 +114,12 @@
                 -Windows : Integrated Security = true
                 - SqlServer: User Id = sa; Pwd = Senha
             </summary>
+        </member>
+        <member name="M:webapi.Filmes.Repositories.GeneroRepository.AtualizarIdCorpo(webapi.Filmes.Domains.GeneroDomain)">
+            <summary>
+            Atualizar um genero passando o seu id pelo corpo da requisicao
+            </summary>
+            <param name="genero">Objeto genero com as novas informacoes</param>
         </member>
         <member name="M:webapi.Filmes.Repositories.GeneroRepository.BuscarPorId(System.Int32)">
             <summary>

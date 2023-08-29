@@ -46,6 +46,7 @@ namespace webapi.Filmes.Interfaces
         /// <param name="id">Id do objeto a ser buscado</param>
         /// <returns>Objeto bsucado</returns>
         GeneroDomain BuscarPorId(int id);
-      
+
+        
     }
 }

@@ -100,7 +100,7 @@ namespace webapi.Filmes.Controllers
         }
 
         /// <summary>
-        /// ndPoint que aciona o metodo de buscar IdGenero
+        /// EndPoint que aciona o metodo de buscar IdGenero
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -110,14 +110,71 @@ namespace webapi.Filmes.Controllers
             try
             {
                 GeneroDomain generoEncontrado = _generoRepository.BuscarPorId(id);
-                
+
                 return Ok(generoEncontrado);
             }
-            catch(Exception erro) 
+            catch (Exception erro)
             {
                 return BadRequest(erro.Message);
             }
         }
+
+        /// <summary>
+        /// EndPoint que aciona o metodo Atualizar Id URL
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="Genero"></param>
+        /// <returns></returns>
+        [HttpPut]
+        public IActionResult AtualizarIdUrl(int id, GeneroDomain Genero)
+        {
+            try
+            {
+                _generoRepository.AtualizarIdUrl(id, Genero);
+
+                return Ok();
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro.Message);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="genero"></param>
+        /// <returns></returns>
+        [HttpPut("{id}")]
+        public IActionResult PutIdBody(GeneroDomain genero)
+        {
+            try
+            {
+                GeneroDomain generoBuscado = _generoRepository.BuscarPorId(genero.IdGenero);
+
+                if (generoBuscado != null)
+                {
+                    try
+                    {
+                        _generoRepository.AtualizarIdCorpo(genero);
+
+                        return StatusCode(204);
+                    }
+                    catch (Exception erro)
+                    {
+                        return BadRequest(erro.Message);
+                    }
+                }
+                return NotFound("Genero nao encontrado");
+            }
+            catch (Exception erro)
+            {
+
+                return BadRequest(erro.Message);
+            }
+        }
+
+
     }
 
 }

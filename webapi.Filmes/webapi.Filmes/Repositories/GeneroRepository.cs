@@ -16,14 +16,64 @@ namespace webapi.Filmes.Repositories
         /// </summary>
 
         private string StringConexao = "Data Source = DESKTOP-2B634JF; Initial Catalog = Filmes; User Id = sa; pwd = Senai@134";
+
+        /// <summary>
+        /// Atualizar um genero passando o seu id pelo corpo da requisicao
+        /// </summary>
+        /// <param name="genero">Objeto genero com as novas informacoes</param>
         public void AtualizarIdCorpo(GeneroDomain genero)
         {
-            throw new NotImplementedException();
+            //Declara a conexao passando a string de conexao como parametro
+            using (SqlConnection con = new SqlConnection(StringConexao)) 
+            {
+                //Declara a query que sera executada
+                string queryUpdate = "UPDATE Genero SET Nome = @Nome WHERE IdGenero = @IdGenero ";
+
+                //Abre a conexao com o banco de dados
+                con.Open();
+
+                //Declara o SqlCommand passando a query que sera executada e a conexao com o bd
+                using (SqlCommand cmd = new SqlCommand(queryUpdate, con)) 
+                {
+                    //passa o valor para o parametro @Nome
+                    cmd.Parameters.AddWithValue("@Nome", genero.Nome);
+
+                    //passa o valor para o parametro @IdGnero
+                    cmd.Parameters.AddWithValue("@IdGenero", genero.IdGenero);
+
+                    //Executar a query (queryInsert)
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
         }
 
         public void AtualizarIdUrl(int id, GeneroDomain Genero)
         {
-            throw new NotImplementedException();
+            //Declara a conexao passando a string de conexao como parametro
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                //Declara a query que sera executada
+                string queryUpdate = "UPDATE Genero SET Nome = @NovoNome WHERE IdGenero = @IdGenero";
+
+                //Declara o SqlCommand passando a query que sera executada e a conexao com o bd
+                using (SqlCommand cmd = new SqlCommand(queryUpdate, con))
+                {
+
+                    //Abre a conexao com o banco de dados
+                    con.Open();
+
+                    //passa o valor para o parametro @IdGnero
+                    cmd.Parameters.AddWithValue("@IdGenero", id);
+
+                    //passa o valor para o parametro @NovoNome
+                    cmd.Parameters.AddWithValue("@NovoNome", Genero.Nome);
+
+                    //Executar a query (queryInsert)
+                    cmd.ExecuteNonQuery();
+
+                }
+            }
         }
 
         /// <summary>
