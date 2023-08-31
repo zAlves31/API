@@ -11,5 +11,5 @@ namespace webapi.Filmes.Domains
         public int IdGenero { get; set; }
 
         public GeneroDomain? Genero { get; set; }
-}
+    }
 }

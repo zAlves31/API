@@ -38,7 +38,7 @@ namespace webapi.Filmes.Repositories
                     //passa o valor para o parametro @Nome
                     cmd.Parameters.AddWithValue("@Nome", genero.Nome);
 
-                    //passa o valor para o parametro @IdGnero
+                    //passa o valor para o parametro @IdGe nero
                     cmd.Parameters.AddWithValue("@IdGenero", genero.IdGenero);
 
                     //Executar a query (queryInsert)

@@ -41,6 +41,21 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="M:webapi.Filmes.Controllers.FilmeController.PutIdBody(webapi.Filmes.Domains.FilmeDomain)">
+            <summary>
+            Endpoint que aciona Atualizar um filme Atualizar Id por Corpo
+            </summary>
+            <param name="filme"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.Filmes.Controllers.FilmeController.AtualizarIdUrl(System.Int32,webapi.Filmes.Domains.FilmeDomain)">
+            <summary>
+            Endpoint que aciona metodo atualizar Id URL de Filme
+            </summary>
+            <param name="id"></param>
+            <param name="Filme"></param>
+            <returns></returns>
+        </member>
         <member name="P:webapi.Filmes.Controllers.GeneroController._generoRepository">
             <summary>
             Objeto _generoRepository que ira receber todos os metodos definidos na interface IGeneroRepository
@@ -80,7 +95,7 @@
         </member>
         <member name="M:webapi.Filmes.Controllers.GeneroController.AtualizarIdUrl(System.Int32,webapi.Filmes.Domains.GeneroDomain)">
             <summary>
-            EndPoint que aciona o metodo Atualizar Id URL
+            EndPoint que aciona o metodo Atualizar Id URL de Genero
             </summary>
             <param name="id"></param>
             <param name="Genero"></param>
@@ -88,7 +103,7 @@
         </member>
         <member name="M:webapi.Filmes.Controllers.GeneroController.PutIdBody(webapi.Filmes.Domains.GeneroDomain)">
             <summary>
-            
+            Endpoint que aciona Atualizar um genero Atualizar Id por Corpo
             </summary>
             <param name="genero"></param>
             <returns></returns>
@@ -141,6 +156,12 @@
             </summary>
             <param name="id">Id do objeto a ser buscado</param>
             <returns>Objeto bsucado</returns>
+        </member>
+        <member name="M:webapi.Filmes.Repositories.FilmeRepository.AtualizarIdCorpo(webapi.Filmes.Domains.FilmeDomain)">
+            <summary>
+            Atualizar um genero passando o seu id pelo corpo da requisicao
+            </summary>
+            <param name="filme">Objeto Filme com as novas informacoes</param>
         </member>
         <member name="M:webapi.Filmes.Repositories.FilmeRepository.Cadastrar(webapi.Filmes.Domains.FilmeDomain)">
             <summary>

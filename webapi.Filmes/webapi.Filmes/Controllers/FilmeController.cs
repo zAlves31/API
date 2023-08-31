@@ -65,7 +65,7 @@ namespace webapi.Filmes.Controllers
             }
             catch (Exception erro)
             {
-                return BadRequest(erro);
+                return BadRequest(erro.Message);
             }
         }
 
@@ -110,6 +110,46 @@ namespace webapi.Filmes.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint que aciona Atualizar um filme Atualizar Id por Corpo
+        /// </summary>
+        /// <param name="filme"></param>
+        /// <returns></returns>
+        [HttpPut]
+        public IActionResult PutIdBody(FilmeDomain filme)
+        {
+            try
+            {
+                _filmeRepository.AtualizarIdCorpo(filme);
+
+                return StatusCode(200);
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro.Message);
+            }
+        }
+
+        /// <summary>
+        /// Endpoint que aciona metodo atualizar Id URL de Filme
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="Filme"></param>
+        /// <returns></returns>
+        [HttpPut("{id}")]
+        public IActionResult AtualizarIdUrl(int id, FilmeDomain Filme)
+        {
+            try
+            {
+                _filmeRepository.AtualizarIdUrl(id, Filme);
+
+                return Ok();
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro.Message);
+            }
+        }
 
     }
 }

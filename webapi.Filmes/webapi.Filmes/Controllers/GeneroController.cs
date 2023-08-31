@@ -120,7 +120,7 @@ namespace webapi.Filmes.Controllers
         }
 
         /// <summary>
-        /// EndPoint que aciona o metodo Atualizar Id URL
+        /// EndPoint que aciona o metodo Atualizar Id URL de Genero
         /// </summary>
         /// <param name="id"></param>
         /// <param name="Genero"></param>
@@ -141,7 +141,7 @@ namespace webapi.Filmes.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Endpoint que aciona Atualizar um genero Atualizar Id por Corpo
         /// </summary>
         /// <param name="genero"></param>
         /// <returns></returns>
