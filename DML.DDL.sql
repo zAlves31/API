@@ -1,0 +1,14 @@
+CREATE TABLE Usuario
+(
+	IdUsuario INT PRIMARY KEY IDENTITY,
+	Email VARCHAR(50) NOT NULL UNIQUE,
+	Senha VARCHAR(50) NOT NULL,
+	Permissao VARCHAR(20) NOT NULL
+
+)
+
+
+INSERT INTO Usuario VALUES ('admin@adimin.com','admin','Administrador'),
+						   ('comum@comum.com','comum','Comum')
+
+
