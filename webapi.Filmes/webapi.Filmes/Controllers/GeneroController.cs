@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using webapi.Filmes.Domains;
 using webapi.Filmes.Interfaces;
@@ -39,7 +39,7 @@ namespace webapi.Filmes.Controllers
         /// </summary>
         /// <returns>resposta para o usuario(front-end)</returns>>
         [HttpGet]
-
+        [Authorize(Roles = "Administrador,comum")]
         public IActionResult Get()
         {
             try
@@ -62,6 +62,7 @@ namespace webapi.Filmes.Controllers
         /// <param name="novoGenero">Objeto recebido na requisicao</param>
         /// <returns>status code 201(created)</returns>
         [HttpPost]
+        [Authorize(Roles = "Administrador")]
         public IActionResult Post(GeneroDomain novoGenero)
         {
             try
@@ -84,6 +85,7 @@ namespace webapi.Filmes.Controllers
         /// <param name="id">id do genero a ser deletado</param>
         /// <returns>status code</returns>
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Administrador")]
         public IActionResult Delete(int id)
         {
             try
@@ -105,6 +107,7 @@ namespace webapi.Filmes.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
+        [Authorize(Roles = "Administrador,comum")]
         public IActionResult BuscarPorId(int id)
         {
             try
@@ -126,6 +129,7 @@ namespace webapi.Filmes.Controllers
         /// <param name="Genero"></param>
         /// <returns></returns>
         [HttpPut]
+        [Authorize(Roles = "Administrador")]
         public IActionResult AtualizarIdUrl(int id, GeneroDomain Genero)
         {
             try
@@ -146,6 +150,7 @@ namespace webapi.Filmes.Controllers
         /// <param name="genero"></param>
         /// <returns></returns>
         [HttpPut("{id}")]
+        [Authorize(Roles = "Administrador")]
         public IActionResult PutIdBody(GeneroDomain genero)
         {
             try

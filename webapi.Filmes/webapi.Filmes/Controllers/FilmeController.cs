@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 using webapi.Filmes.Domains;
 using webapi.Filmes.Interfaces;
 using webapi.Filmes.Repositories;
@@ -30,6 +32,7 @@ namespace webapi.Filmes.Controllers
         /// </summary>
         /// <returns>resposta para o usuario(front-end)</returns>>
         [HttpGet]
+        [Authorize(Roles = "Administrador,comum")]
 
         public IActionResult Get()
         {
@@ -54,6 +57,7 @@ namespace webapi.Filmes.Controllers
         /// <param name="novoFilme"></param>
         /// <returns></returns>
         [HttpPost]
+        [Authorize(Roles = "Administrador")]
         public IActionResult Post(FilmeDomain novoFilme)
         {
             try
@@ -75,6 +79,7 @@ namespace webapi.Filmes.Controllers
         /// <param name="id">id do filme a ser deletado</param>
         /// <returns>status code</returns>
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Administrador")]
         public IActionResult Delete(int id)
         {
             try
@@ -96,6 +101,7 @@ namespace webapi.Filmes.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
+        [Authorize(Roles = "Administrador,comum")]
         public IActionResult BuscarPorId(int id)
         {
             try
@@ -116,6 +122,7 @@ namespace webapi.Filmes.Controllers
         /// <param name="filme"></param>
         /// <returns></returns>
         [HttpPut]
+        [Authorize(Roles = "Administrador")]
         public IActionResult PutIdBody(FilmeDomain filme)
         {
             try
@@ -137,6 +144,7 @@ namespace webapi.Filmes.Controllers
         /// <param name="Filme"></param>
         /// <returns></returns>
         [HttpPut("{id}")]
+        [Authorize(Roles = "Administrador")]
         public IActionResult AtualizarIdUrl(int id, FilmeDomain Filme)
         {
             try
