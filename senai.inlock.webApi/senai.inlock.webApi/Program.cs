@@ -1,4 +1,3 @@
-
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
@@ -29,16 +28,16 @@ builder.Services.AddAuthentication(options =>
         ValidateLifetime = true,
 
         // forma de cripitografia e valida a chave de autenticacao
-        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("filmes-chave-autenticacao-webapi-dev")),
+        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("InLock-chave-autenticacao-webapi-dev")),
 
         //valida o tempo de expiracao do token
         ClockSkew = TimeSpan.FromMinutes(5),
 
         //nome do issuer (de onde esta vindo)
-        ValidIssuer = "webapi.Filmes",
+        ValidIssuer = "senai.inlock.webApi.",
 
         //nome do audience (para onde esta indo)
-        ValidAudience = "webapi.Filmes"
+        ValidAudience = "senai.inlock.webApi."
     };
 });
 
@@ -48,8 +47,8 @@ builder.Services.AddSwaggerGen(options =>
     options.SwaggerDoc("v1", new OpenApiInfo
     {
         Version = "v1",
-        Title = "API Filmes",
-        Description = "Api para gerenciamneto de filmes - Sprint 2",
+        Title = "InLock",
+        Description = "Api para gerenciamneto de InLock - Sprint 2",
         Contact = new OpenApiContact
         {
             Name = "Joao Victor Alves Bautista ",
@@ -59,7 +58,7 @@ builder.Services.AddSwaggerGen(options =>
 
     // configura o swagger para usar o arquivo XML gerado
     var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-    options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+    //options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
 
 
     //Usando a autenticaçao no Swagger
