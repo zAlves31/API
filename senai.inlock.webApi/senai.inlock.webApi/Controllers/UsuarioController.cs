@@ -36,7 +36,7 @@ namespace senai.inlock.webApi_.Controllers
                 {
                     new Claim(JwtRegisteredClaimNames.Jti,usuarioBuscado.IdUsuario.ToString()),
                     new Claim(JwtRegisteredClaimNames.Email,usuarioBuscado.Email),
-                    new Claim(ClaimTypes.Role,usuarioBuscado.Permissao),
+                    new Claim(ClaimTypes.Role,usuarioBuscado.Permissao.ToString()),
 
                     new Claim("Claim personalizada", "Valor da Claim personalizada")
                 };
