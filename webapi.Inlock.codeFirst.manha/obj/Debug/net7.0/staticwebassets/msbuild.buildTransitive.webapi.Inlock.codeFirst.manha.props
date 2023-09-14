@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\webapi.Inlock.codeFirst.manha.props" />
+</Project>

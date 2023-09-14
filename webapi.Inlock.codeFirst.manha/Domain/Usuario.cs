@@ -1,11 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace webapi.Inlock.codeFirst.manha.Domain
 {
     [Table("Usuario")]
+    [Index(nameof(Email), IsUnique=true)]//Cria um indice unico
     public class Usuario
     {
+
+        [Key]
         public Guid IdUsuario { get; set; }= Guid.NewGuid();
 
         [Column(TypeName ="VARCHAR(100)")]
