@@ -13,7 +13,7 @@ namespace webapi.event_.manha.Domains
         [Required(ErrorMessage = "Data do evento obrigatoria!")]
         public DateTime DataEvento { get; set; }
 
-        [Column(TypeName = "DATE")]
+        [Column(TypeName = "VARCHAR(100)")]
         [Required(ErrorMessage = "Data do evento obrigatoria!")]
         public string? NomeEvento { get; set; }
 
