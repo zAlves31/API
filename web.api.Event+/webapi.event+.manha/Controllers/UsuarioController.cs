@@ -32,5 +32,35 @@ namespace webapi.event_.manha.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        [HttpGet("{id}")]
+
+        public IActionResult BuscarPorId(Guid id) 
+        {
+            try
+            {
+                return Ok(_usuarioRepository.BuscarPorId(id));
+            }
+            catch(Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpGet]
+        public IActionResult BuscarPorEmailESenha(string email, string senha)
+        {
+            try
+            {
+                return Ok(_usuarioRepository.BuscarPorEmailESenha(email, senha));
+            }
+            catch(Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        
+
     }
 }

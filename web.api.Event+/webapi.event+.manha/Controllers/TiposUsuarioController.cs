@@ -32,6 +32,20 @@ namespace webapi.event_.manha.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        [HttpDelete("{id}")]
+        public IActionResult Deletar(Guid id)
+        {
+            try
+            {
+                _tiposUsuarioRepository.Deletar(id);
+                return StatusCode(201);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
     }
 
     

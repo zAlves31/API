@@ -32,7 +32,9 @@ namespace webapi.event_.manha.Repositories
 
         public void Deletar(Guid id)
         {
-            throw new NotImplementedException();
+            TiposUsuario TipoBuscado = _eventContext.TiposUsuario.Find(id);
+            _eventContext.TiposUsuario.Remove(TipoBuscado);
+            _eventContext.SaveChanges();
         }
 
         public List<TiposUsuario> Listar()

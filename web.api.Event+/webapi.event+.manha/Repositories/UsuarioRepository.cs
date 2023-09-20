@@ -18,7 +18,19 @@ namespace webapi.event_.manha.Repositories
         {
             try
             {
-                Usuario usuarioBuscado = _eventContext.Usuario.FirstOrDefault(u => u.Email == email);
+                Usuario usuarioBuscado = _eventContext.Usuario
+                    .Select(u => new Usuario
+                    {
+                        IdUsuario = u.IdUsuario,
+                        Nome = u.Nome,
+                        Email = u.Email,
+                        Senha = u.Senha,
+                        TiposUsuario = new TiposUsuario
+                        {
+                            IdTipoUsuario = u.IdTipoUsuario,
+                            Titulo = u.TiposUsuario.Titulo
+                        }
+                    }).FirstOrDefault(u => u.Email == email)!;
 
                 if (usuarioBuscado != null)
                 {
@@ -68,13 +80,20 @@ namespace webapi.event_.manha.Repositories
 
         public void Cadastrar(Usuario usuario)
         {
+            try
+            {
+                usuario.Senha = Criptografia.GerarHash(usuario.Senha!);
 
+                _eventContext.Usuario.Add(usuario);
 
-            usuario.Senha = Criptografia.GerarHash(usuario.Senha!);
+                _eventContext.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
 
-            _eventContext.Usuario.Add(usuario);
-
-            _eventContext.SaveChanges();
+           
         }
     }
 }
