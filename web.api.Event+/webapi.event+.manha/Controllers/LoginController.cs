@@ -28,45 +28,44 @@ namespace webapi.event_.manha.Controllers
             {
                 Usuario usuarioBuscado = _usuarioRepository.BuscarPorEmailESenha(usuario.Email!, usuario.Senha!);
 
-                if(usuarioBuscado == null)
+                if (usuarioBuscado == null)
                 {
-                    return StatusCode(401, "Email ou senha invalidos!");
+                    return StatusCode(401, "Email ou senha inválidos!");
                 }
+
+                //lógica do token:
 
                 var claims = new[]
                 {
-                    new Claim(JwtRegisteredClaimNames.Email,usuarioBuscado.Email!),
-                    new Claim(JwtRegisteredClaimNames.Name,usuarioBuscado.Nome!),
+                    new Claim(JwtRegisteredClaimNames.Email, usuarioBuscado.Email!),
+                    new Claim(JwtRegisteredClaimNames.Name, usuarioBuscado.Nome!),
                     new Claim(JwtRegisteredClaimNames.Jti,usuarioBuscado.IdUsuario.ToString()),
                     new Claim(ClaimTypes.Role,usuarioBuscado.TiposUsuario!.Titulo!)
                 };
 
-                var Key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("event-webapi-chave-autenticacao"));
+                var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("projeto-event-webapi-chave-autenticacao"));
 
-                var creds = new SigningCredentials(Key, SecurityAlgorithms.HmacSha256);
+                var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-                var token = new JwtSecurityToken
-               (
-                   issuer: "webapi.event+.manha",
-                   audience: "webapi.event+.manha",
-                   claims: claims,
-                   expires: DateTime.Now.AddMinutes(5),
-                   signingCredentials: creds
+                var token = new JwtSecurityToken(
+                        issuer: "webapi.event+.manha",
+                        audience: "webapi.event+.manha",
+                        claims: claims,
+                        expires: DateTime.Now.AddMinutes(5),
+                        signingCredentials: creds
                     );
+
                 return Ok(new
                 {
-
                     token = new JwtSecurityTokenHandler().WriteToken(token)
                 });
 
-
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw;
+                return BadRequest(e.Message);
             }
         }
 
-        
     }
 }
