@@ -50,8 +50,8 @@ builder.Services.AddSwaggerGen(options =>
 options.SwaggerDoc("v1", new OpenApiInfo
 {
     Version = "v1",
-    Title = "API Filmes",
-    Description = "Api para gerenciamneto de filmes - Sprint 2",
+    Title = "API Event+",
+    Description = "Api para gerenciamneto de Event+ - Sprint 2",
     Contact = new OpenApiContact
     {
         Name = "Joao Victor Alves Bautista ",
