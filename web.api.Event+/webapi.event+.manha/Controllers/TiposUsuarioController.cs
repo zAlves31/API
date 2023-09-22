@@ -56,7 +56,6 @@ namespace webapi.event_.manha.Controllers
             {
                 return Ok(_tiposUsuarioRepository.BuscarPorID(id));
 
-                
             }
             catch (Exception e)
             {

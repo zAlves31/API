@@ -9,9 +9,13 @@ namespace webapi.event_.manha.Domains
         [Key]
         public Guid IdComentarioEvento { get; set; } = Guid.NewGuid();
 
+        [Column(TypeName = "TEXT")]
+        [Required(ErrorMessage = "Descricao obrigatoria!")]
+        public string? Descricao { get; set; }
+
         [Column(TypeName ="TEXT")]
         [Required(ErrorMessage = "Descricao obrigatoria!")] 
-        public bool Exibe { get; set; }
+        public bool? Exibe { get; set; }
 
         //ref.tabela Usuario = FK
         [Required(ErrorMessage = "Usuario obrigatorio!")]

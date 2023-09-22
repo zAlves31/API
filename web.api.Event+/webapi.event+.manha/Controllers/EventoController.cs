@@ -9,64 +9,24 @@ namespace webapi.event_.manha.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
-    public class InstituicaoController : ControllerBase
+    public class EventoController : ControllerBase
     {
-        private IInstituicaoRepository _instituicaoRepository;
 
-        public InstituicaoController()
+        private IEventoRepository _eventoRepository;
+
+        public EventoController()
         {
-            _instituicaoRepository = new InstituicaoRepository();
+            _eventoRepository = new EventoRepository();
         }
 
         [HttpPost]
-        public IActionResult Post(Instituicao instituicao)
+        public IActionResult Post(Evento evento)
         {
             try
             {
-                _instituicaoRepository.Cadastrar(instituicao);
+                _eventoRepository.Cadastrar(evento);
 
                 return StatusCode(201);
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
-        }
-
-        [HttpGet]
-        public IActionResult Get()
-        {
-            try
-            {
-                return Ok(_instituicaoRepository.Listar());
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
-        }
-
-        [HttpDelete("{id}")]
-        public IActionResult Deletar(Guid id)
-        {
-            try
-            {
-                _instituicaoRepository.Deletar(id);
-
-                return StatusCode(201);
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
-        }
-
-        [HttpGet("{id}")]
-        public IActionResult GetById(Guid id) 
-        {
-            try
-            {
-                return Ok(_instituicaoRepository.BuscarPorID(id));
             }
             catch(Exception e) 
             {
@@ -74,12 +34,54 @@ namespace webapi.event_.manha.Controllers
             }
         }
 
-        [HttpPut("{id}")]
-        public IActionResult Put(Guid id, Instituicao instituicao)
+        [HttpGet]
+        public IActionResult Get() 
         {
             try
             {
-                _instituicaoRepository.Atualizar(id, instituicao);
+                return Ok(_eventoRepository.Listar());
+            }
+            catch(Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(Guid id)
+        {
+            try
+            {
+                _eventoRepository.Deletar(id);
+
+                return StatusCode(201);
+            }
+            catch(Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetById(Guid id)
+        {
+            try
+            {
+                return Ok(_eventoRepository.BuscarPorID(id));
+                    
+            }
+            catch(Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Put(Guid id, Evento evento)
+        {
+            try
+            {
+                _eventoRepository.Atualizar(id, evento);
 
                 return NoContent();
             }
@@ -89,5 +91,4 @@ namespace webapi.event_.manha.Controllers
             }
         }
     }
-
 }

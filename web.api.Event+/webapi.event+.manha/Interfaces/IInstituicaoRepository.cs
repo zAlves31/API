@@ -8,9 +8,9 @@ namespace webapi.event_.manha.Interfaces
 
         void Deletar(Guid id);
 
-        List<TiposEvento> Listar();
+        List<Instituicao> Listar();
 
-        TiposEvento BuscarPorID(Guid id);
+        Instituicao BuscarPorID(Guid id);
 
         void Atualizar(Guid id, Instituicao instituicao);
     }
