@@ -3344,11 +3344,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\52546124870\\Desktop\\webapi.Healthclinic\\webapi.healthclinic\\webapihealthclinic.csproj",
+      "projectUniqueName": "C:\\Users\\52546124870\\Desktop\\API\\webapi.Healthclinic\\webapi.healthclinic\\webapihealthclinic.csproj",
       "projectName": "webapihealthclinic",
-      "projectPath": "C:\\Users\\52546124870\\Desktop\\webapi.Healthclinic\\webapi.healthclinic\\webapihealthclinic.csproj",
+      "projectPath": "C:\\Users\\52546124870\\Desktop\\API\\webapi.Healthclinic\\webapi.healthclinic\\webapihealthclinic.csproj",
       "packagesPath": "C:\\Users\\52546124870\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\52546124870\\Desktop\\webapi.Healthclinic\\webapi.healthclinic\\obj\\",
+      "outputPath": "C:\\Users\\52546124870\\Desktop\\API\\webapi.Healthclinic\\webapi.healthclinic\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\52546124870\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -9,6 +9,10 @@ namespace webapihealthclinic.Domains
         [Key]
         public Guid IdMedico { get; set; } = Guid.NewGuid();
 
+        [Column(TypeName = "CHAR(8)")]
+        [Required(ErrorMessage = "Numero do CRM obrigatorio!")]
+        public string? CRM { get; set; }
+
         //ref.tabela Usuario = FK
         [Required(ErrorMessage = "Informe o usuario ")]
         public Guid IdUsuario { get; set; }
