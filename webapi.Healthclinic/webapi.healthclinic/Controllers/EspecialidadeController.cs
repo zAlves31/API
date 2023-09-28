@@ -9,37 +9,23 @@ namespace webapihealthclinic.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
-    public class UsuarioController : ControllerBase
+    public class EspecialidadeController : ControllerBase
     {
-        private IUsuarioRepository _usuarioRepository;
+        private IEspecialidadeRepository _especialidadeRepository;
 
-        public UsuarioController()
+        public EspecialidadeController()
         {
-            _usuarioRepository = new UsuarioRepository();
+            _especialidadeRepository= new EspecialidadeRepository();
         }
 
         [HttpPost]
-        public IActionResult Post(Usuario usuario)
+        public IActionResult Post(Especialidade especialidade)
         {
             try
             {
-                 _usuarioRepository.Cadastrar(usuario);
+                _especialidadeRepository.Cadastrar(especialidade);
 
                 return StatusCode(201);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
-
-        [HttpGet("{id}")]
-
-        public IActionResult BuscarPorId(Guid id)
-        {
-            try
-            {
-                return Ok(_usuarioRepository.BuscarPorId(id));
             }
             catch (Exception e)
             {
@@ -48,11 +34,11 @@ namespace webapihealthclinic.Controllers
         }
 
         [HttpGet]
-        public IActionResult BuscarPorEmailESenha(string email, string senha)
+        public IActionResult Get()
         {
             try
             {
-                return Ok(_usuarioRepository.BuscarPorEmailESenha(email, senha));
+                return Ok(_especialidadeRepository.Listar());
             }
             catch (Exception e)
             {
@@ -60,7 +46,19 @@ namespace webapihealthclinic.Controllers
             }
         }
 
+        [HttpDelete] 
+        public IActionResult Delete(Guid id) 
+        {
+            try
+            {
+                _especialidadeRepository.Deletar(id);
 
-
+                return StatusCode(201);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);   
+            }
+        }
     }
 }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using webapihealthclinic.Contexts;
 
@@ -11,9 +12,11 @@ using webapihealthclinic.Contexts;
 namespace webapihealthclinic.Migrations
 {
     [DbContext(typeof(HealtchclinicContext))]
-    partial class HealtchclinicContextModelSnapshot : ModelSnapshot
+    [Migration("20230928132641_BDTESTE2.0")]
+    partial class BDTESTE20
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -28,8 +31,8 @@ namespace webapihealthclinic.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<TimeSpan>("Abertura")
-                        .HasColumnType("TIME");
+                    b.Property<DateTime>("Abertura")
+                        .HasColumnType("SMALLDATETIME");
 
                     b.Property<string>("CNPJ")
                         .IsRequired()
@@ -39,8 +42,8 @@ namespace webapihealthclinic.Migrations
                         .IsRequired()
                         .HasColumnType("VARCHAR(100)");
 
-                    b.Property<TimeSpan>("Fechamento")
-                        .HasColumnType("TIME");
+                    b.Property<DateTime>("Fechamento")
+                        .HasColumnType("SMALLDATETIME");
 
                     b.Property<string>("Nome")
                         .IsRequired()

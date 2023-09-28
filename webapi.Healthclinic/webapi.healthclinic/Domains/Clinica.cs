@@ -17,13 +17,13 @@ namespace webapihealthclinic.Domains
         [Required(ErrorMessage = "Endereco obrigatorio!")]
         public string? Endereco { get; set; }
 
-        [Column(TypeName = "DATE")]
+        [Column(TypeName = "TIME")]
         [Required(ErrorMessage = "Horario de abertura obrigatorio!")]
-        public DateTime Abertura { get; set; }
+        public TimeSpan Abertura { get; set; }
 
-        [Column(TypeName = "DATE")]
+        [Column(TypeName = "TIME")]
         [Required(ErrorMessage = "Horario de fechamento obrigatorio!")]
-        public DateTime Fechamento { get; set; }
+        public TimeSpan Fechamento { get; set; }
 
         [Column(TypeName = "CHAR(14)")]
         [Required(ErrorMessage = "CNPJ obrigatorio!")]

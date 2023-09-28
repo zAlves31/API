@@ -9,7 +9,7 @@ namespace webapihealthclinic.Domains
         [Key]
         public Guid IdConsulta { get; set; } = Guid.NewGuid();
 
-        [Column(TypeName = "DATE")]
+        [Column(TypeName = "DATETIME")]
         [Required(ErrorMessage = "Data de agendamento obrigatorio!")]
         public DateTime DataAgendamento { get; set; }
 
