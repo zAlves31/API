@@ -2,7 +2,7 @@
 
 namespace webapihealthclinic.Interfaces
 {
-    public interface IComentario
+    public interface IComentarioRepository
     {
         void Cadastrar(Comentario comentario);
 

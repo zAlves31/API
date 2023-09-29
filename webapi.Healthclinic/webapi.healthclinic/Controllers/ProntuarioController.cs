@@ -9,39 +9,38 @@ namespace webapihealthclinic.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
-    public class ClinicaController : ControllerBase
+    public class ProntuarioController : ControllerBase
     {
+        private IProntuarioRepository _prontuarioRepository;
 
-        private IClinicaRepository _clinicaRepository;
-
-        public ClinicaController()
+        public ProntuarioController()
         {
-            _clinicaRepository = new ClinicaRepository();
+            _prontuarioRepository = new ProntuarioRepository();
         }
 
         [HttpPost]
-        public IActionResult Post(Clinica clinica)
+        public IActionResult Post(Prontuario prontuario)
         {
             try
             {
-                _clinicaRepository.Cadastrar(clinica);
+                _prontuarioRepository.Cadastrar(prontuario);
 
                 return StatusCode(201);
             }
-            catch (Exception e)
+            catch(Exception e)
             {
                 return BadRequest(e.Message);
             }
-        }
+        } 
 
         [HttpGet]
         public IActionResult Get()
         {
             try
             {
-                return Ok(_clinicaRepository.Listar());
+                return Ok(_prontuarioRepository.Listar());
             }
-            catch (Exception e)
+            catch(Exception e)
             {
                 return BadRequest(e.Message);
             }
@@ -52,25 +51,24 @@ namespace webapihealthclinic.Controllers
         {
             try
             {
-                _clinicaRepository.Deletar(id);
+                _prontuarioRepository.Deletar(id);
                 return StatusCode(201);
             }
-            catch (Exception e)
+            catch(Exception e)
             {
                 return BadRequest(e.Message);
             }
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(Guid id, Clinica clinica)
+        public IActionResult Put(Guid id, Prontuario prontuario)
         {
             try
             {
-                _clinicaRepository.Atualizar(id, clinica);
-
+                _prontuarioRepository.Atualizar(id, prontuario);
                 return NoContent();
             }
-            catch (Exception e)
+            catch(Exception e)
             {
                 return BadRequest(e.Message);
             }

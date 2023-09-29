@@ -9,26 +9,25 @@ namespace webapihealthclinic.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
-    public class ClinicaController : ControllerBase
+    public class PacienteController : ControllerBase
     {
+        private IPacienteRepository _pacienteRepository;
 
-        private IClinicaRepository _clinicaRepository;
-
-        public ClinicaController()
+        public PacienteController()
         {
-            _clinicaRepository = new ClinicaRepository();
+            _pacienteRepository = new PacienteRepository();
         }
 
         [HttpPost]
-        public IActionResult Post(Clinica clinica)
+        public IActionResult Post(Paciente paciente)
         {
             try
             {
-                _clinicaRepository.Cadastrar(clinica);
+                _pacienteRepository.Cadastrar(paciente);
 
                 return StatusCode(201);
             }
-            catch (Exception e)
+            catch(Exception e)
             {
                 return BadRequest(e.Message);
             }
@@ -39,9 +38,9 @@ namespace webapihealthclinic.Controllers
         {
             try
             {
-                return Ok(_clinicaRepository.Listar());
+                return Ok(_pacienteRepository.Listar());
             }
-            catch (Exception e)
+            catch(Exception e)
             {
                 return BadRequest(e.Message);
             }
@@ -52,28 +51,28 @@ namespace webapihealthclinic.Controllers
         {
             try
             {
-                _clinicaRepository.Deletar(id);
+                _pacienteRepository.Deletar(id);
                 return StatusCode(201);
             }
-            catch (Exception e)
+            catch(Exception e)
             {
                 return BadRequest(e.Message);
             }
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(Guid id, Clinica clinica)
+        public IActionResult Put(Guid id, Paciente paciente)
         {
             try
             {
-                _clinicaRepository.Atualizar(id, clinica);
-
+                _pacienteRepository.Atualizar(id, paciente);
                 return NoContent();
             }
-            catch (Exception e)
+            catch(Exception e)
             {
                 return BadRequest(e.Message);
             }
         }
+
     }
 }

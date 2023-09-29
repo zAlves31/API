@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using webapihealthclinic.Contexts;
 
@@ -11,9 +12,11 @@ using webapihealthclinic.Contexts;
 namespace webapihealthclinic.Migrations
 {
     [DbContext(typeof(HealtchclinicContext))]
-    partial class HealtchclinicContextModelSnapshot : ModelSnapshot
+    [Migration("20230929113208_bd5")]
+    partial class bd5
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -79,8 +82,9 @@ namespace webapihealthclinic.Migrations
                     b.Property<DateTime>("DataAgendamento")
                         .HasColumnType("DATETIME");
 
-                    b.Property<DateTime>("HorarioAgendamento")
-                        .HasColumnType("SMALLDATETIME");
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR");
 
                     b.Property<Guid>("IdComentario")
                         .HasColumnType("uniqueidentifier");
@@ -128,10 +132,6 @@ namespace webapihealthclinic.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("CPF")
-                        .IsRequired()
-                        .HasColumnType("CHAR(11)");
-
                     b.Property<string>("CRM")
                         .IsRequired()
                         .HasColumnType("CHAR(8)");
@@ -144,10 +144,6 @@ namespace webapihealthclinic.Migrations
 
                     b.Property<Guid>("IdUsuario")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Telefone")
-                        .IsRequired()
-                        .HasColumnType("CHAR(14)");
 
                     b.HasKey("IdMedico");
 

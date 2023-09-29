@@ -9,7 +9,7 @@ namespace webapihealthclinic.Domains
         [Key]
         public Guid IdProntuario { get; set; } = Guid.NewGuid();
 
-        [Column(TypeName ="VARCHAR")]
+        [Column(TypeName ="TEXT")]
         [Required(ErrorMessage ="Descricao obrigatoria!")]
         public string? Descricao { get; set; }
     }

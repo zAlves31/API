@@ -13,6 +13,14 @@ namespace webapihealthclinic.Domains
         [Required(ErrorMessage = "Numero do CRM obrigatorio!")]
         public string? CRM { get; set; }
 
+        [Column(TypeName = "CHAR(14)")]
+        [Required(ErrorMessage = "Numero de telefone obrigatorio!")]
+        public string? Telefone { get; set; }
+
+        [Column(TypeName = "CHAR(11)")]
+        [Required(ErrorMessage = "Numero do CPF obrigatorio!")]
+        public string? CPF { get; set; }
+
         //ref.tabela Usuario = FK
         [Required(ErrorMessage = "Informe o usuario ")]
         public Guid IdUsuario { get; set; }

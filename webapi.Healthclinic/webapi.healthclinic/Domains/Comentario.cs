@@ -9,7 +9,7 @@ namespace webapihealthclinic.Domains
         [Key]
         public Guid IdComentario { get; set; } = Guid.NewGuid();
 
-        [Column(TypeName ="VARCHAR")]
+        [Column(TypeName ="TEXT")]
         [Required(ErrorMessage ="Comentario obrigatorio!")]  
         public string? Feedback { get; set; }
 

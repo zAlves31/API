@@ -10,6 +10,6 @@ namespace webapihealthclinic.Interfaces
 
         void Atualizar(Guid id, Prontuario prontuario);
 
-        List<Clinica> Listar();
+        List<Prontuario> Listar();
     }
 }

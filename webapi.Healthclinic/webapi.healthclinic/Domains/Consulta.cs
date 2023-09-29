@@ -13,10 +13,9 @@ namespace webapihealthclinic.Domains
         [Required(ErrorMessage = "Data de agendamento obrigatorio!")]
         public DateTime DataAgendamento { get; set; }
 
-        [Column(TypeName = "VARCHAR")]
-        [Required(ErrorMessage = "Descricao obrigatoria!")]
-        public string? Descricao { get; set; }
-
+        [Column(TypeName = "SMALLDATETIME")]
+        [Required(ErrorMessage = "Data de agendamento obrigatorio!")]
+        public DateTime HorarioAgendamento { get; set; }
 
         //ref.tabela Paciente = FK
         [Required(ErrorMessage = "Informe a clinica ")]
