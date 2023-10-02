@@ -9,21 +9,21 @@ namespace webapihealthclinic.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
-    public class ComentarioController : ControllerBase
+    public class MedicoController : ControllerBase
     {
-        private IComentarioRepository _comentarioRepository;
+        private IMedicoRepository _medicorepository;
 
-        public ComentarioController()
+        public MedicoController()
         {
-            _comentarioRepository = new ComentarioRepository();
+            _medicorepository = new MedicoRepository();
         }
 
         [HttpPost]
-        public IActionResult Post(Comentario comentario)
+        public IActionResult Post(Medico medico)
         {
             try
             {
-                _comentarioRepository.Cadastrar(comentario);
+                _medicorepository.Cadastrar(medico);
 
                 return StatusCode(201);
             }
@@ -38,7 +38,7 @@ namespace webapihealthclinic.Controllers
         {
             try
             {
-                return Ok(_comentarioRepository.Listar());
+                return Ok(_medicorepository.Listar());
             }
             catch (Exception e)
             {
@@ -46,12 +46,12 @@ namespace webapihealthclinic.Controllers
             }
         }
 
-        [HttpDelete("{id}")] 
+        [HttpDelete]
         public IActionResult Delete(Guid id) 
         {
             try
             {
-                _comentarioRepository.Deletar(id);
+                _medicorepository.Deletar(id);
 
                 return StatusCode(201);
             }
@@ -61,20 +61,18 @@ namespace webapihealthclinic.Controllers
             }
         }
 
-        [HttpGet("{id}")]
-        public IActionResult BuscarConsulta(Guid id)
+        [HttpPut("{id}")]
+        public IActionResult Put (Guid id, Medico medico)
         {
             try
             {
-                return Ok(_comentarioRepository.BuscarPorConsulta(id));
+                _medicorepository.Atualizar(id, medico);
+                return NoContent();
             }
             catch (Exception e)
             {
-
                 return BadRequest(e.Message);
             }
         }
-
     }
-
 }

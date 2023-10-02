@@ -24,8 +24,7 @@ namespace webapihealthclinic.Repositories
                 tipoProntuarioBuscado.Telefone = paciente.Telefone;
                 tipoProntuarioBuscado.RG = paciente.RG;
                 tipoProntuarioBuscado.CPF = paciente.CPF;
-                tipoProntuarioBuscado.Endereco = paciente.Endereco;
-                tipoProntuarioBuscado.IdUsuario = paciente.IdUsuario;
+                tipoProntuarioBuscado.Endereco = paciente.Endereco; 
             }
             _healtchclinicContext.Update(tipoProntuarioBuscado);
             _healtchclinicContext.SaveChanges();
@@ -46,7 +45,32 @@ namespace webapihealthclinic.Repositories
 
         public List<Paciente> Listar()
         {
-            return _healtchclinicContext.Paciente.ToList();
+            return _healtchclinicContext.Paciente.Select(p => new Paciente
+            {
+                IdPaciente = p.IdPaciente,
+                DataNascimento = p.DataNascimento,
+                Telefone = p.Telefone,
+                CPF = p.CPF,
+                RG = p.RG,
+                Endereco = p.Endereco,
+
+                IdUsuario = p.IdUsuario,
+                Usuario = new Usuario
+                {
+                    IdUsuario = p.IdUsuario,
+                    Nome = p.Usuario!.Nome,
+                    Email = p.Usuario!.Email,
+                    Senha = p.Usuario!.Senha,
+                    IdTipoUsuario = p.Usuario!.IdTipoUsuario,
+
+                    TiposUsuario = new TiposUsuario
+                    {
+                        IdTipoUsuario = p.Usuario.IdTipoUsuario,
+                        Titulo = p.Usuario.TiposUsuario!.Titulo
+                    }
+                }
+            }).ToList();
+                
         }
     }
 }

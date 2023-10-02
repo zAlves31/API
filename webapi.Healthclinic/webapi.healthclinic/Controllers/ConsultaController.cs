@@ -9,28 +9,13 @@ namespace webapihealthclinic.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
-    public class ComentarioController : ControllerBase
+    public class ConsultaController : ControllerBase
     {
-        private IComentarioRepository _comentarioRepository;
+        private IConsultaRepository _consultaRepository;
 
-        public ComentarioController()
+        public ConsultaController()
         {
-            _comentarioRepository = new ComentarioRepository();
-        }
-
-        [HttpPost]
-        public IActionResult Post(Comentario comentario)
-        {
-            try
-            {
-                _comentarioRepository.Cadastrar(comentario);
-
-                return StatusCode(201);
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
+            _consultaRepository = new ConsultaRepository();
         }
 
         [HttpGet]
@@ -38,7 +23,7 @@ namespace webapihealthclinic.Controllers
         {
             try
             {
-                return Ok(_comentarioRepository.Listar());
+                return Ok(_consultaRepository.Listar());
             }
             catch (Exception e)
             {
@@ -46,12 +31,40 @@ namespace webapihealthclinic.Controllers
             }
         }
 
-        [HttpDelete("{id}")] 
-        public IActionResult Delete(Guid id) 
+        [HttpGet("{idMedico}")]
+        public IActionResult ListarPorMedico(Guid id)
         {
             try
             {
-                _comentarioRepository.Deletar(id);
+                return Ok(_consultaRepository.ListarMedico(id));
+            }
+            catch (Exception e)
+            {
+
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpGet("{idPaciente}")]
+        public IActionResult ListarPacientes(Guid id)
+        {
+            try
+            {
+                return Ok(_consultaRepository.ListarPaciente(id));
+            }
+            catch (Exception e)
+            {
+
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpPost]
+        public IActionResult Post(Consulta consulta)
+        {
+            try
+            {
+                _consultaRepository.Cadastrar(consulta);
 
                 return StatusCode(201);
             }
@@ -60,21 +73,5 @@ namespace webapihealthclinic.Controllers
                 return BadRequest(e.Message);
             }
         }
-
-        [HttpGet("{id}")]
-        public IActionResult BuscarConsulta(Guid id)
-        {
-            try
-            {
-                return Ok(_comentarioRepository.BuscarPorConsulta(id));
-            }
-            catch (Exception e)
-            {
-
-                return BadRequest(e.Message);
-            }
-        }
-
     }
-
 }

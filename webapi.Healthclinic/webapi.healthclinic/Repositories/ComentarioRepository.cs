@@ -1,4 +1,5 @@
-﻿using webapihealthclinic.Contexts;
+﻿using Microsoft.EntityFrameworkCore;
+using webapihealthclinic.Contexts;
 using webapihealthclinic.Domains;
 using webapihealthclinic.Interfaces;
 
@@ -11,6 +12,16 @@ namespace webapihealthclinic.Repositories
         public ComentarioRepository()
         {
             _healtchclinicContext= new HealtchclinicContext();
+        }
+
+        public List<Comentario> BuscarPorConsulta(Guid id)
+        {
+            Comentario comentario = new Comentario();
+            if (comentario.IdConsulta == id)
+            {
+                return _healtchclinicContext.Comentario.ToList();
+            }
+            return null!;
         }
 
         public void Cadastrar(Comentario comentario)

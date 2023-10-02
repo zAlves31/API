@@ -13,5 +13,12 @@ namespace webapihealthclinic.Domains
         [Required(ErrorMessage ="Comentario obrigatorio!")]  
         public string? Feedback { get; set; }
 
+        //ref.tabela Comentario = FK
+        [Required(ErrorMessage = "Informe o Comentario ")]
+        public Guid IdConsulta { get; set; }
+
+        [ForeignKey(nameof(IdConsulta))]
+        public Consulta? Consulta { get; set; }
+
     }
 }

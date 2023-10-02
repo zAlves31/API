@@ -6,6 +6,8 @@ namespace webapihealthclinic.Interfaces
     {
         void Cadastrar(Comentario comentario);
 
+        List<Comentario> BuscarPorConsulta(Guid id);
+
         void Deletar(Guid id);
 
         List<Comentario> Listar();
