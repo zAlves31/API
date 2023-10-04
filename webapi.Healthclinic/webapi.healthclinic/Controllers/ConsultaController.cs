@@ -18,6 +18,10 @@ namespace webapihealthclinic.Controllers
             _consultaRepository = new ConsultaRepository();
         }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo listar todas as consultas
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -31,6 +35,11 @@ namespace webapihealthclinic.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo listar todas as consultas do medico
+        /// </summary>
+        /// <param name="idMedico"></param>
+        /// <returns></returns>
         [HttpGet("idMedico")]
         public IActionResult ListarPorMedico(Guid idMedico)
         {
@@ -45,6 +54,11 @@ namespace webapihealthclinic.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo listar todas as consultas do Paciente
+        /// </summary>
+        /// <param name="idPaciente"></param>
+        /// <returns></returns>
         [HttpGet("idPaciente")]
         public IActionResult ListarPacientes(Guid idPaciente)
         {
@@ -59,6 +73,11 @@ namespace webapihealthclinic.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo cadastrar Consulta
+        /// </summary>
+        /// <param name="consulta"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post(Consulta consulta)
         {

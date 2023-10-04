@@ -18,6 +18,11 @@ namespace webapihealthclinic.Controllers
             _tiposUsuarioRepository = new TiposUsuarioRepository();
          }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo cadastrar TipoUsuario
+        /// </summary>
+        /// <param name="tiposUsuario"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post(TiposUsuario tiposUsuario)
         {
@@ -33,6 +38,10 @@ namespace webapihealthclinic.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo listar TipoUsuario
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get() 
         {
@@ -46,6 +55,11 @@ namespace webapihealthclinic.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo deletar TipoUsuario
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {

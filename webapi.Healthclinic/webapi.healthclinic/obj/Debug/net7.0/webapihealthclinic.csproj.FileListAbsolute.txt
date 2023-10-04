@@ -162,3 +162,5 @@ C:\Users\52546124870\Desktop\API\webapi.Healthclinic\webapi.healthclinic\obj\Deb
 C:\Users\52546124870\Desktop\API\webapi.Healthclinic\webapi.healthclinic\obj\Debug\net7.0\webapihealthclinic.pdb
 C:\Users\52546124870\Desktop\API\webapi.Healthclinic\webapi.healthclinic\obj\Debug\net7.0\webapihealthclinic.genruntimeconfig.cache
 C:\Users\52546124870\Desktop\API\webapi.Healthclinic\webapi.healthclinic\obj\Debug\net7.0\ref\webapihealthclinic.dll
+C:\Users\52546124870\Desktop\API\webapi.Healthclinic\webapi.healthclinic\bin\Debug\net7.0\webapihealthclinic.xml
+C:\Users\52546124870\Desktop\API\webapi.Healthclinic\webapi.healthclinic\obj\Debug\net7.0\webapihealthclinic.xml

@@ -18,6 +18,11 @@ namespace webapihealthclinic.Controllers
             _comentarioRepository = new ComentarioRepository();
         }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo cadastrar Comentario
+        /// </summary>
+        /// <param name="comentario"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post(Comentario comentario)
         {
@@ -33,6 +38,10 @@ namespace webapihealthclinic.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo listar todos os Comentarios
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -46,6 +55,11 @@ namespace webapihealthclinic.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo deletar Comentario
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")] 
         public IActionResult Delete(Guid id) 
         {
@@ -61,6 +75,11 @@ namespace webapihealthclinic.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo buscar Comentario pelo Id da consulta
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public IActionResult BuscarConsulta(Guid id)
         {

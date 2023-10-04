@@ -1,0 +1,368 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>webapihealthclinic</name>
+    </assembly>
+    <members>
+        <member name="M:webapihealthclinic.Controllers.ClinicaController.Post(webapihealthclinic.Domains.Clinica)">
+            <summary>
+            Endpoint que aciona o metodo cadastrar Clinica
+            </summary>
+            <param name="clinica"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.ClinicaController.Get">
+            <summary>
+            Endpoint que aciona o metodo listar Clinica
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.ClinicaController.Delete(System.Guid)">
+            <summary>
+            Endpoint que aciona o metodo deletar Clinica
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.ClinicaController.Put(System.Guid,webapihealthclinic.Domains.Clinica)">
+            <summary>
+            Endpoint que aciona o metodo atualizar Clinica
+            </summary>
+            <param name="id"></param>
+            <param name="clinica"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.ComentarioController.Post(webapihealthclinic.Domains.Comentario)">
+            <summary>
+            Endpoint que aciona o metodo cadastrar Comentario
+            </summary>
+            <param name="comentario"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.ComentarioController.Get">
+            <summary>
+            Endpoint que aciona o metodo listar todos os Comentarios
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.ComentarioController.Delete(System.Guid)">
+            <summary>
+            Endpoint que aciona o metodo deletar Comentario
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.ComentarioController.BuscarConsulta(System.Guid)">
+            <summary>
+            Endpoint que aciona o metodo buscar Comentario pelo Id da consulta
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.ConsultaController.Get">
+            <summary>
+            Endpoint que aciona o metodo listar todas as consultas
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.ConsultaController.ListarPorMedico(System.Guid)">
+            <summary>
+            Endpoint que aciona o metodo listar todas as consultas do medico
+            </summary>
+            <param name="idMedico"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.ConsultaController.ListarPacientes(System.Guid)">
+            <summary>
+            Endpoint que aciona o metodo listar todas as consultas do Paciente
+            </summary>
+            <param name="idPaciente"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.ConsultaController.Post(webapihealthclinic.Domains.Consulta)">
+            <summary>
+            Endpoint que aciona o metodo cadastrar Consulta
+            </summary>
+            <param name="consulta"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.EspecialidadeController.Post(webapihealthclinic.Domains.Especialidade)">
+            <summary>
+            Endpoint que aciona o metodo cadastrar Especialidade
+            </summary>
+            <param name="especialidade"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.EspecialidadeController.Get">
+            <summary>
+            Endpoint que aciona o metodo listar Especialidade
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.EspecialidadeController.Delete(System.Guid)">
+            <summary>
+            Endpoint que aciona o metodo deletar Especialidade
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.MedicoController.Post(webapihealthclinic.Domains.Medico)">
+            <summary>
+            Endpoint que aciona o metodo cadastrar Medico
+            </summary>
+            <param name="medico"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.MedicoController.Get">
+            <summary>
+            Endpoint que aciona o metodo listar Medico
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.MedicoController.Delete(System.Guid)">
+            <summary>
+            Endpoint que aciona o metodo deletar Medico
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.MedicoController.Put(System.Guid,webapihealthclinic.Domains.Medico)">
+            <summary>
+            Endpoint que aciona o metodo atualizar Medico
+            </summary>
+            <param name="id"></param>
+            <param name="medico"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.PacienteController.Post(webapihealthclinic.Domains.Paciente)">
+            <summary>
+            Endpoint que aciona o metodo cadastrar Paciente
+            </summary>
+            <param name="paciente"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.PacienteController.Get">
+            <summary>
+            Endpoint que aciona o metodo listar Paciente
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.PacienteController.Delete(System.Guid)">
+            <summary>
+            Endpoint que aciona o metodo deletar Paciente
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.PacienteController.Put(System.Guid,webapihealthclinic.Domains.Paciente)">
+            <summary>
+            Endpoint que aciona o metodo atualizar Paciente
+            </summary>
+            <param name="id"></param>
+            <param name="paciente"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.ProntuarioController.Post(webapihealthclinic.Domains.Prontuario)">
+            <summary>
+            Endpoint que aciona o metodo cadastrar Prontuario
+            </summary>
+            <param name="prontuario"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.ProntuarioController.Get">
+            <summary>
+            Endpoint que aciona o metodo listar Prontuario
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.ProntuarioController.Delete(System.Guid)">
+            <summary>
+            Endpoint que aciona o metodo deletar Prontuario
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.ProntuarioController.Put(System.Guid,webapihealthclinic.Domains.Prontuario)">
+            <summary>
+            Endpoint que aciona o metodo atualizar Prontuario
+            </summary>
+            <param name="id"></param>
+            <param name="prontuario"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.TiposUsuarioController.Post(webapihealthclinic.Domains.TiposUsuario)">
+            <summary>
+            Endpoint que aciona o metodo cadastrar TipoUsuario
+            </summary>
+            <param name="tiposUsuario"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.TiposUsuarioController.Get">
+            <summary>
+            Endpoint que aciona o metodo listar TipoUsuario
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.TiposUsuarioController.Delete(System.Guid)">
+            <summary>
+            Endpoint que aciona o metodo deletar TipoUsuario
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.UsuarioController.Post(webapihealthclinic.Domains.Usuario)">
+            <summary>
+            Endpoint que aciona o metodo cadastrar Usuario
+            </summary>
+            <param name="usuario"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.UsuarioController.BuscarPorId(System.Guid)">
+            <summary>
+            Endpoint que aciona o metodo Buscar por Id do Usuario
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapihealthclinic.Controllers.UsuarioController.BuscarPorEmailESenha(System.String,System.String)">
+            <summary>
+            Endpoint que aciona o metodo buscar por email e senha do Usuario
+            </summary>
+            <param name="email"></param>
+            <param name="senha"></param>
+            <returns></returns>
+        </member>
+        <member name="T:webapihealthclinic.Migrations.Bd">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.Bd.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.Bd.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.Bd.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:webapihealthclinic.Migrations.BD8">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.BD8.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.BD8.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.BD8.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:webapihealthclinic.Migrations.BDTESTE20">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.BDTESTE20.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.BDTESTE20.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.BDTESTE20.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:webapihealthclinic.Migrations.BDTESTE23">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.BDTESTE23.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.BDTESTE23.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.BDTESTE23.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:webapihealthclinic.Migrations.bd45">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.bd45.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.bd45.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.bd45.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:webapihealthclinic.Migrations.bd5">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.bd5.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.bd5.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.bd5.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:webapihealthclinic.Migrations.bd90">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.bd90.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.bd90.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.bd90.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:webapihealthclinic.Migrations.bd99">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.bd99.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.bd99.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.bd99.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:webapihealthclinic.Migrations.BD123">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.BD123.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.BD123.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.BD123.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:webapihealthclinic.Migrations.BDteste">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.BDteste.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.BDteste.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.BDteste.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:webapihealthclinic.Migrations.BDteste2">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.BDteste2.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.BDteste2.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapihealthclinic.Migrations.BDteste2.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

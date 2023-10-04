@@ -18,6 +18,11 @@ namespace webapihealthclinic.Controllers
             _prontuarioRepository = new ProntuarioRepository();
         }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo cadastrar Prontuario
+        /// </summary>
+        /// <param name="prontuario"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post(Prontuario prontuario)
         {
@@ -31,8 +36,12 @@ namespace webapihealthclinic.Controllers
             {
                 return BadRequest(e.Message);
             }
-        } 
+        }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo listar Prontuario
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -46,6 +55,11 @@ namespace webapihealthclinic.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo deletar Prontuario
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {
@@ -60,6 +74,12 @@ namespace webapihealthclinic.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo atualizar Prontuario
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="prontuario"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public IActionResult Put(Guid id, Prontuario prontuario)
         {

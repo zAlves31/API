@@ -18,6 +18,11 @@ namespace webapihealthclinic.Controllers
             _usuarioRepository = new UsuarioRepository();
         }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo cadastrar Usuario
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post(Usuario usuario)
         {
@@ -33,6 +38,11 @@ namespace webapihealthclinic.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo Buscar por Id do Usuario
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
 
         public IActionResult BuscarPorId(Guid id)
@@ -47,6 +57,12 @@ namespace webapihealthclinic.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo buscar por email e senha do Usuario
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="senha"></param>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult BuscarPorEmailESenha(string email, string senha)
         {

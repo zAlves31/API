@@ -19,6 +19,11 @@ namespace webapihealthclinic.Controllers
             _clinicaRepository = new ClinicaRepository();
         }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo cadastrar Clinica
+        /// </summary>
+        /// <param name="clinica"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post(Clinica clinica)
         {
@@ -34,6 +39,10 @@ namespace webapihealthclinic.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo listar Clinica
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -47,6 +56,11 @@ namespace webapihealthclinic.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo deletar Clinica
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {
@@ -61,6 +75,12 @@ namespace webapihealthclinic.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo atualizar Clinica
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="clinica"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public IActionResult Put(Guid id, Clinica clinica)
         {

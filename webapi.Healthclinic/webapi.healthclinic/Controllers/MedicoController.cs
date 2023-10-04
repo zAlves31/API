@@ -18,6 +18,11 @@ namespace webapihealthclinic.Controllers
             _medicorepository = new MedicoRepository();
         }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo cadastrar Medico
+        /// </summary>
+        /// <param name="medico"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post(Medico medico)
         {
@@ -33,6 +38,10 @@ namespace webapihealthclinic.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo listar Medico
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -46,6 +55,11 @@ namespace webapihealthclinic.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo deletar Medico
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete]
         public IActionResult Delete(Guid id) 
         {
@@ -61,6 +75,12 @@ namespace webapihealthclinic.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo atualizar Medico
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="medico"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public IActionResult Put (Guid id, Medico medico)
         {

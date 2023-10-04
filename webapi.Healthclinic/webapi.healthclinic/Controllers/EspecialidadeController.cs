@@ -18,6 +18,11 @@ namespace webapihealthclinic.Controllers
             _especialidadeRepository= new EspecialidadeRepository();
         }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo cadastrar Especialidade
+        /// </summary>
+        /// <param name="especialidade"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post(Especialidade especialidade)
         {
@@ -33,6 +38,10 @@ namespace webapihealthclinic.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo listar Especialidade
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -46,6 +55,11 @@ namespace webapihealthclinic.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo deletar Especialidade
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete] 
         public IActionResult Delete(Guid id) 
         {

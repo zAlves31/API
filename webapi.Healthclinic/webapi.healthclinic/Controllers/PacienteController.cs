@@ -18,6 +18,11 @@ namespace webapihealthclinic.Controllers
             _pacienteRepository = new PacienteRepository();
         }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo cadastrar Paciente
+        /// </summary>
+        /// <param name="paciente"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post(Paciente paciente)
         {
@@ -27,12 +32,16 @@ namespace webapihealthclinic.Controllers
 
                 return StatusCode(201);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return BadRequest(e.Message);
             }
         }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo listar Paciente
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -46,6 +55,11 @@ namespace webapihealthclinic.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo deletar Paciente
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {
@@ -60,6 +74,12 @@ namespace webapihealthclinic.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint que aciona o metodo atualizar Paciente
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="paciente"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public IActionResult Put(Guid id, Paciente paciente)
         {
