@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using webapihealthclinic.Contexts;
 
@@ -11,9 +12,11 @@ using webapihealthclinic.Contexts;
 namespace webapihealthclinic.Migrations
 {
     [DbContext(typeof(HealtchclinicContext))]
-    partial class HealtchclinicContextModelSnapshot : ModelSnapshot
+    [Migration("20231004105854_BDteste")]
+    partial class BDteste
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -87,6 +90,9 @@ namespace webapihealthclinic.Migrations
                     b.Property<TimeSpan>("HorarioAgendamento")
                         .HasColumnType("TIME");
 
+                    b.Property<Guid>("IdComentario")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<Guid>("IdMedico")
                         .HasColumnType("uniqueidentifier");
 
@@ -97,6 +103,8 @@ namespace webapihealthclinic.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("IdConsulta");
+
+                    b.HasIndex("IdComentario");
 
                     b.HasIndex("IdMedico");
 
@@ -270,6 +278,12 @@ namespace webapihealthclinic.Migrations
 
             modelBuilder.Entity("webapihealthclinic.Domains.Consulta", b =>
                 {
+                    b.HasOne("webapihealthclinic.Domains.Comentario", "Comentario")
+                        .WithMany()
+                        .HasForeignKey("IdComentario")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("webapihealthclinic.Domains.Medico", "Medico")
                         .WithMany()
                         .HasForeignKey("IdMedico")
@@ -287,6 +301,8 @@ namespace webapihealthclinic.Migrations
                         .HasForeignKey("IdProntuario")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Comentario");
 
                     b.Navigation("Medico");
 

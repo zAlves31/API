@@ -27,22 +27,13 @@ namespace webapihealthclinic.Repositories
 
         public List<Consulta> ListarMedico(Guid id)
         {
-            Medico medico = new Medico();
-            if (medico.IdMedico == id)
-            {
-                return _healtchclinicContext.Consulta.ToList();
-            }
-            return null!;
+            return _healtchclinicContext.Consulta.Where(u => u.IdMedico == id).ToList();
+
         }
 
         public List<Consulta> ListarPaciente(Guid id)
         {
-            Paciente paciente = new Paciente();
-            if (paciente.IdPaciente == id)
-            {
-                return _healtchclinicContext.Consulta.ToList();
-            }
-            return null!;
+            return _healtchclinicContext.Consulta.Where(u => u.IdPaciente == id).ToList();
         }
     }
 }

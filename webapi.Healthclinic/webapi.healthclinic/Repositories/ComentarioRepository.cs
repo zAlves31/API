@@ -19,9 +19,10 @@ namespace webapihealthclinic.Repositories
             Comentario comentario = new Comentario();
             if (comentario.IdConsulta == id)
             {
-                return _healtchclinicContext.Comentario.ToList();
+                return null!;
             }
-            return null!;
+            return _healtchclinicContext.Comentario.ToList();
+
         }
 
         public void Cadastrar(Comentario comentario)

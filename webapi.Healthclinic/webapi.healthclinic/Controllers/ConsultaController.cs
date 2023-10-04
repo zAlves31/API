@@ -31,12 +31,12 @@ namespace webapihealthclinic.Controllers
             }
         }
 
-        [HttpGet("{idMedico}")]
-        public IActionResult ListarPorMedico(Guid id)
+        [HttpGet("idMedico")]
+        public IActionResult ListarPorMedico(Guid idMedico)
         {
             try
             {
-                return Ok(_consultaRepository.ListarMedico(id));
+                return Ok(_consultaRepository.ListarMedico(idMedico));
             }
             catch (Exception e)
             {
@@ -45,12 +45,12 @@ namespace webapihealthclinic.Controllers
             }
         }
 
-        [HttpGet("{idPaciente}")]
-        public IActionResult ListarPacientes(Guid id)
+        [HttpGet("idPaciente")]
+        public IActionResult ListarPacientes(Guid idPaciente)
         {
             try
             {
-                return Ok(_consultaRepository.ListarPaciente(id));
+                return Ok(_consultaRepository.ListarPaciente(idPaciente));
             }
             catch (Exception e)
             {

@@ -13,9 +13,9 @@ namespace webapihealthclinic.Domains
         [Required(ErrorMessage = "Data de agendamento obrigatorio!")]
         public DateTime DataAgendamento { get; set; }
 
-        [Column(TypeName = "SMALLDATETIME")]
+        [Column(TypeName = "TIME")]
         [Required(ErrorMessage = "Data de agendamento obrigatorio!")]
-        public DateTime HorarioAgendamento { get; set; }
+        public TimeSpan HorarioAgendamento { get; set; }
 
         //ref.tabela Paciente = FK
         [Required(ErrorMessage = "Informe a clinica ")]
@@ -31,14 +31,6 @@ namespace webapihealthclinic.Domains
 
         [ForeignKey(nameof(IdMedico))]
         public Medico? Medico { get; set; }
-
-
-        //ref.tabela Comentario = FK
-        [Required(ErrorMessage = "Informe o Comentario ")]
-        public Guid IdComentario { get; set; }
-
-        [ForeignKey(nameof(IdComentario))]
-        public Comentario? Comentario { get; set; }
 
 
         //ref.tabela Comentario = FK
