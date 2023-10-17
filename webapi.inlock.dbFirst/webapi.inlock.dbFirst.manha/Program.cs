@@ -8,9 +8,9 @@ builder.Services
     .AddControllers()
     .AddNewtonsoftJson(options =>
     {
-        // Ignora os loopings nas consultas
+        // Ignora os loopings nas consultas!
         options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-        // Ignora valores nulos ao fazer junções nas consultas
+        // Ignora valores nulos ao fazer junï¿½ï¿½es nas consultas
         options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
     }
     );
