@@ -1,0 +1,126 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Jos\u00E9\\Desktop\\EtiquetaCerta\\webApi.EtiquetaCerta\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BF021251-ACAE-4468-A10A-D3EC9001E7A0}|webApi.EtiquetaCerta.csproj|c:\\users\\jos\u00E9\\desktop\\etiquetacerta\\webapi.etiquetacerta\\dtos\\labelsymbologyupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF021251-ACAE-4468-A10A-D3EC9001E7A0}|webApi.EtiquetaCerta.csproj|solutionrelative:dtos\\labelsymbologyupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF021251-ACAE-4468-A10A-D3EC9001E7A0}|webApi.EtiquetaCerta.csproj|c:\\users\\jos\u00E9\\desktop\\etiquetacerta\\webapi.etiquetacerta\\repositories\\labelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF021251-ACAE-4468-A10A-D3EC9001E7A0}|webApi.EtiquetaCerta.csproj|solutionrelative:repositories\\labelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF021251-ACAE-4468-A10A-D3EC9001E7A0}|webApi.EtiquetaCerta.csproj|c:\\users\\jos\u00E9\\desktop\\etiquetacerta\\webapi.etiquetacerta\\dtos\\legislationgetdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF021251-ACAE-4468-A10A-D3EC9001E7A0}|webApi.EtiquetaCerta.csproj|solutionrelative:dtos\\legislationgetdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF021251-ACAE-4468-A10A-D3EC9001E7A0}|webApi.EtiquetaCerta.csproj|c:\\users\\jos\u00E9\\desktop\\etiquetacerta\\webapi.etiquetacerta\\controllers\\labelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF021251-ACAE-4468-A10A-D3EC9001E7A0}|webApi.EtiquetaCerta.csproj|solutionrelative:controllers\\labelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF021251-ACAE-4468-A10A-D3EC9001E7A0}|webApi.EtiquetaCerta.csproj|c:\\users\\jos\u00E9\\desktop\\etiquetacerta\\webapi.etiquetacerta\\controllers\\legislationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF021251-ACAE-4468-A10A-D3EC9001E7A0}|webApi.EtiquetaCerta.csproj|solutionrelative:controllers\\legislationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF021251-ACAE-4468-A10A-D3EC9001E7A0}|webApi.EtiquetaCerta.csproj|c:\\users\\jos\u00E9\\desktop\\etiquetacerta\\webapi.etiquetacerta\\repositories\\legislationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF021251-ACAE-4468-A10A-D3EC9001E7A0}|webApi.EtiquetaCerta.csproj|solutionrelative:repositories\\legislationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LabelSymbologyUpdateDto.cs",
+              "DocumentMoniker": "C:\\Users\\Jos\u00E9\\Desktop\\EtiquetaCerta\\webApi.EtiquetaCerta\\Dtos\\LabelSymbologyUpdateDto.cs",
+              "RelativeDocumentMoniker": "Dtos\\LabelSymbologyUpdateDto.cs",
+              "ToolTip": "C:\\Users\\Jos\u00E9\\Desktop\\EtiquetaCerta\\webApi.EtiquetaCerta\\Dtos\\LabelSymbologyUpdateDto.cs",
+              "RelativeToolTip": "Dtos\\LabelSymbologyUpdateDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-17T23:50:39.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LegislationRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Jos\u00E9\\Desktop\\EtiquetaCerta\\webApi.EtiquetaCerta\\Repositories\\LegislationRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\LegislationRepository.cs",
+              "ToolTip": "C:\\Users\\Jos\u00E9\\Desktop\\EtiquetaCerta\\webApi.EtiquetaCerta\\Repositories\\LegislationRepository.cs",
+              "RelativeToolTip": "Repositories\\LegislationRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-17T23:42:45.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LegislationController.cs",
+              "DocumentMoniker": "C:\\Users\\Jos\u00E9\\Desktop\\EtiquetaCerta\\webApi.EtiquetaCerta\\Controllers\\LegislationController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LegislationController.cs",
+              "ToolTip": "C:\\Users\\Jos\u00E9\\Desktop\\EtiquetaCerta\\webApi.EtiquetaCerta\\Controllers\\LegislationController.cs",
+              "RelativeToolTip": "Controllers\\LegislationController.cs",
+              "ViewState": "AQIAAGgAAAAAAAAAAAAqwGwAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-17T23:22:55.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LegislationGetDto.cs",
+              "DocumentMoniker": "C:\\Users\\Jos\u00E9\\Desktop\\EtiquetaCerta\\webApi.EtiquetaCerta\\Dtos\\LegislationGetDto.cs",
+              "RelativeDocumentMoniker": "Dtos\\LegislationGetDto.cs",
+              "ToolTip": "C:\\Users\\Jos\u00E9\\Desktop\\EtiquetaCerta\\webApi.EtiquetaCerta\\Dtos\\LegislationGetDto.cs",
+              "RelativeToolTip": "Dtos\\LegislationGetDto.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAA3wCQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-17T22:50:43.302Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LabelRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Jos\u00E9\\Desktop\\EtiquetaCerta\\webApi.EtiquetaCerta\\Repositories\\LabelRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\LabelRepository.cs",
+              "ToolTip": "C:\\Users\\Jos\u00E9\\Desktop\\EtiquetaCerta\\webApi.EtiquetaCerta\\Repositories\\LabelRepository.cs",
+              "RelativeToolTip": "Repositories\\LabelRepository.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAADwvzsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-17T21:50:22.664Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LabelController.cs",
+              "DocumentMoniker": "C:\\Users\\Jos\u00E9\\Desktop\\EtiquetaCerta\\webApi.EtiquetaCerta\\Controllers\\LabelController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LabelController.cs",
+              "ToolTip": "C:\\Users\\Jos\u00E9\\Desktop\\EtiquetaCerta\\webApi.EtiquetaCerta\\Controllers\\LabelController.cs",
+              "RelativeToolTip": "Controllers\\LabelController.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAiwLQAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-17T00:47:18.495Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
